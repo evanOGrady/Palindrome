@@ -1,0 +1,35 @@
+using System;
+
+namespace Palindrome
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declare the variables
+            string backwards = string.Empty;
+            string phrase = " ";
+            Console.Write($"Enter a string and we'll check to see if it's a palindrome. ");
+            phrase = Convert.ToString(Console.ReadLine());
+            Console.WriteLine($"\nYou entered: {phrase} ");
+
+            Console.Write($"\nIn reverse, your string is: ");
+
+            for (int i = phrase.Length - 1; i >= 0; i--)
+            {
+                backwards += phrase[i].ToString();
+            }
+           
+            // Do the if statement
+            Console.Write($"{backwards}");
+            if (String.Equals(phrase, backwards))
+            {
+                Console.WriteLine($"\nThis is a palindrome!");
+            }
+            else
+            {
+                Console.WriteLine($"\nThis is not a palindrome");
+            }
+        }
+    }
+}
